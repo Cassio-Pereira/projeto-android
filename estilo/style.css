@@ -1,0 +1,194 @@
+@charset "TFF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('../fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+*{
+    
+    padding: 0px; /* com isso tira todos os espaços em html*/
+}
+
+:root {
+--cor0: #c5ebd6;
+--cor01: #83e1ad;
+--cor02: #3ddc84;
+--cor03: #2fa866;
+--cor04: #1a5c37;
+--cor05: #063d1e;
+
+--fonte-padrão:Arial, Verdana, Helvetica, sans-serif;
+--fonte-destaque:'Bebas Neue', sans-serif;
+    --font-android:'Android', 'cursive';
+  
+  } /*Pseudo classe, vira uma tag padrão para usar em qualquer lugar*/
+body {
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrão)
+}
+a.externo::after { /*Para links externos*/
+    content: '\00A0\1F517'; /*Todo link externo vai ter um emogi de link externo*/
+
+
+}
+
+header{
+    background-color: var(--cor04);
+    min-height: 150px; /*Altura cabeçalho*/
+    text-align: center; /*Centralizar texto cabeçalho*/
+    padding-top: 40px; /*Área do cabeçalho*/
+   
+}
+header > h1 {
+    color: white;
+    font-family: var(--fonte-destaque);
+    margin-bottom: 20px; /*Espaço entre textos do cabeçalho*/
+    font-size: 3em;
+    text-shadow: 2px 2px 0px black;
+    font-weight: normal; /*Deixa a fonte mais legível*/
+}
+header > p {
+    color: white;
+    font-family: var(--fonte-padrão);
+    font-size: 1.2em; /*Tamanho da fonte*/
+    max-width: 600px; /*O paragráfo do cabeçalho vai se adequar com o tamanho dá página*/
+    padding-left: 10px; /*Mantem a largura esquerda quando vai quebrando a página*/
+    padding-right: 10px; /*Mantem a largura direita quando vai quebrando a página*/
+    text-shadow: 2px 2px 20px black;
+    margin: auto; /*O paragráfo do cabeçalho vai se adequar com o tamanho dá página*/
+    padding: 10px; /*Ao redor do paragrafo*/
+}
+nav {
+    background-color: var(--cor05);
+    padding: 10px; /*Na navegação de links princiapal o espaço da sua caixa*/
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.295); /*Sombra da caixa*/
+}
+nav > a:hover {
+    background-color: var(--cor03);
+    color: var(--cor05);
+}
+nav > a {/*link de navegação*/
+    color: var(--cor01);
+    padding: 10px; /*Espaçamento entre os links*/
+    border-radius: 5px; /*Arrendontamento nas bordas*/
+    text-decoration: none;
+    font-weight: bold; /*font maisgordinha*/
+    transition-duration: .5s; /*Um destaque quando passa o mouse no link*/
+}
+
+main {
+    background-color: white;
+    padding: 20px;
+    border-bottom-left-radius: 10px; /*Borda manualmente arrendondadas*/
+    border-bottom-right-radius: 10px; /*Borda manualmente arrendondadas*/
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.466); /*Sombreamento nas laterais*/
+    margin-bottom: 30px ; /*Espaço do conteúdo com o rodapé*/
+
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+}
+main p { /* O P vai ser configurado em todos os lugares*/
+    margin: 15px 0px; /*Espaçamento dos paragrafos*/
+    text-align: justify; /*Alinha paragrafo*/
+    text-indent: 30px; /*Recúo do paragrafo*/
+    line-height: 2em;  /*Altura entre linhas*/
+    font-size: 1em; /*Tamanho fonte*/ 
+    margin: 15px 0px; /*Espaçamento dos paragrafos*/
+    text-align: justify; /*Alinha paragrafo*/
+}
+main strong { /*Os negritos*/
+    color: black;
+    font-weight: bold;
+}
+main a { /*Links*/
+    text-decoration: none;
+    font-weight: bold; /*Da um destaque na font do link*/
+    color: var(--cor03);
+    background-color: var(--cor01); /*Faz uma demarcação no link*/
+    padding: 2px 6px; /*Espaçamento ao redor do background-color*/
+}
+main a:hover {/*Quando passar o mouse por cima do link ele vai ganhar um destaque*/
+    text-decoration: underline; /* Linha embaixo*/
+    color: var(--cor05);
+
+}
+main h1 {
+    color: var(--cor05);
+    font-family: var(--font-android);
+    font-weight: normal;
+    font-size: 1.8em;/*Tamanho fonte*/
+}
+main h2 {
+    font-family: var(--font-android);
+    color: var(--cor04);
+    font-size: 1.3em; /*Tamanho da font*/
+    background-image: linear-gradient(to right, var(--cor01), transparent); /* Da
+    direita para esquerda ele vai aumentando um degrade*/
+    text-indent: 8px; /*Margem do h2*/
+    font-weight: normal;
+}
+aside > h3 {
+    background-color: var(--cor04);
+    color: white;
+    padding: 10px;/*Largura background*/
+    margin: -10px -10px 0px -10px; /*Ele ajusta com o padding*/
+    border-radius: 10px 10px 0px 0px; /*Ele ajusta o tamanho dos 4 cantos*/
+
+}
+main img {
+    width: 100%;
+}
+div.video {
+    background-color: var(--cor05);
+    margin: 0px -20px 30px -20px; /*Assim ele cola certinho no n div*/
+    padding: 20px; /*Imagina um retângulo, seria uma margem em retângulo*/
+    position: relative; /*Posição do vídeo*/
+    padding-bottom: 59%;/*Tira os lados pretos dentro do vídeo*/
+}
+div.video > iframe {
+    position: absolute;/*Posição do vídeo*/
+    top: 5%;/*Posição do vídeo*/
+    left: 5%;/*Posição do vídeo*/
+    width: 90%;/*Posição do vídeo*/
+    height: 90%;/*Posição do vídeo*/
+
+}
+main img.pequena {
+    max-width: 350px; /*Usando 350, a imagem é 400, assim não perde a qualidade*/
+    display:block; /*Utilizado para centralizar imagem pequena*/
+    margin: auto; /*Utilizado para centralizar imagem pequena*/
+}
+img {
+    width: 100%; /*A imagem sempre vai adequando ao tamanho da janela*/
+}
+aside {
+    background-color: var(--cor01);
+    padding: 10px; /*Uma margem ao redor*/
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.384);
+}
+aside > ul { /*Lista*/
+    list-style-position: inside; /*Alinha as bolinhas para dentro do Aside*/
+    columns: 2; /*Divide uma lista em quantas quiser, aqui está em 2*/
+    list-style-type: '\2714\00A0\00A0';/*2714 copiado do emojipedia/ 00A0 é um 
+    espaço, foi utilizado dois espaços*/
+}
+footer { /*Rodape*/
+    background-color: var(--cor05);
+    color: white;
+    text-align: center;
+    font-size: 0.8;
+    padding: 5px;
+}
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+footer a:hover {
+    text-decoration: underline;
+}
